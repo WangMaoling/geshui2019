@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Keywords" content="2019新个税计算器,新个税计算器,2019个人所得税计算器,个税税率表2019,工资计算器,税后工资计算器,新个税计算公式">
+    <meta name="Description" content="2019新个税计算器，采用了2019年最新个人所得税计算税率表、起征点和速算扣除表，子女教育费、住房贷款利息、租房租金等专项附加税扣除一键搞定，是2019年最好用的在线免费个税计算器。">
+    <meta name="abstract" content="2019新个税计算器，采用了2019年最新个人所得税计算税率表、起征点和速算扣除表，子女教育费、住房贷款利息、租房租金等专项附加税扣除一键搞定，是2019年最好用的在线免费个税计算器。">
+	<meta name="robots" content="Index,Follow">
+	<meta name="revisit-after" content="14 days">
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="2019新个税计算器，采用了2019年最新个人所得税计算税率表、起征点和速算扣除表，子女教育费、住房贷款利息、租房租金等专项附加税扣除一键搞定，是2019年最好用的在线免费个税计算器。">
+	<meta property="og:title" content="2019新个税计算器 - 人所得税计算税率表">
+	<meta property="og:url" content="geshui2019.ofoyou.com">
+    <title>2019新个税计算器</title>
+    <link rel="shortcut icon" type="image/png" href="source/tax.png">
+    <link rel="stylesheet" href="source/style.css">
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <script>
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+            //移动端
+            window.location = "index_m.html";
+        }
+    </script>
+</head>
+<body>
+    <div id="app" @click="showMoneyI = false">
+        <div class="floater">
+            <div class="er">
+                <p class="name"></p>
+            </div>
+            <div class="er">
+                <p class="name"></p>
+            </div>
+            <div class="er">
+                <p class="name"></p>
+            </div>
+        </div>
+        <div class="intro">
+            <h2>2019年新个税资讯</h2> <a target="_blank" rel="nofollow" href="http://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">中华人民共和国个人所得税法</a>
+            <a target="_blank" rel="nofollow" href="http://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3963364/content.html">中华人民共和国个人所得税法实施条例</a>
+            <a target="_blank" rel="nofollow" href="http://www.chinatax.gov.cn/n810219/n810744/n3752930/n3758781/c3968494/content.html">个税专项附加扣除这么扣</a>
+        </div>
+        <div class="intro expression">
+            <h2>2019年工资、薪金个税抵扣公式</h2>
+            <p>
+                应预扣预缴税额=（累计预扣预缴应纳税所得额×预扣率-速算扣除数)-累计减免税额-累计已预扣预缴税额<br>
+                累计预扣预缴应纳税所得额=累计收入-累计免税收入-累计减除费用-累计专项扣除-累计专项附加扣除-累计依法确定的其他扣除<br>
+                累计减除费用：按照5000元/月乘以纳税人当年截至本月在本单位的任职受雇月份数计算。
+            </p>
+        </div>
+        <div class="intro">
+            <h2>2019新个税税率表</h2>
+            <table style="width: 100%; border-top: 1px solid rgb(229, 229, 229);">
+                <colgroup>
+                    <col width="45%">
+                    <col width="25%">
+                    <col width="30%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>新级数(元)</td>
+                        <td>税率(%)</td>
+                        <td>速算扣除数</td>
+                    </tr>
+                    <tr>
+                        <td>&lt; 36000</td>
+                        <td>3</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>36000-144000</td>
+                        <td>10</td>
+                        <td>2520</td>
+                    </tr>
+                    <tr>
+                        <td>144000-300000</td>
+                        <td>20</td>
+                        <td>16920</td>
+                    </tr>
+                    <tr>
+                        <td>300000-420000</td>
+                        <td>25</td>
+                        <td>31920</td>
+                    </tr>
+                    <tr>
+                        <td>420000-660000</td>
+                        <td>30</td>
+                        <td>52920</td>
+                    </tr>
+                    <tr>
+                        <td>660000-960000</td>
+                        <td>35</td>
+                        <td>85920</td>
+                    </tr>
+                    <tr>
+                        <td>&gt; 960000</td>
+                        <td>45</td>
+                        <td>181920</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>注：新级数为全年应纳税所得额</p>
+        </div>
+        <div class="main">
+            <div class="title">
+                <h1>2019 新个税计算器</h1> <span class="small-text">个税计算结果仅供参考，实际数额以税务机关确认的结果为准</span>
+            </div>
+            <div class="form">
+                <div class="item"><label class="label">
+                    <span class="text">税前月收入</span> 
+                    <input placeholder="请输入收入金额" type="number" v-model="salary" inputmode="numeric">
+                    </label>
+                </div>
+                <div class="item">
+                    <label class="label">
+                        <span class="text">专项附加扣除</span> 
+                        <input placeholder="请输入对应金额" type="number" v-model="deduct1" inputmode="numeric">
+                    </label>
+                </div>
+                <div class="item">
+                    <label class="label">
+                        <span class="text">各项社会保险费</span> 
+                        <input placeholder="请输入对应金额" type="number" v-model="deduct2" inputmode="numeric">
+                    </label>
+                </div>
+                <div class="item" style="margin-top: 15px; margin-bottom: 0px;">
+                    <button @click="post" class="button blue">计算</button>
+                    <button @click="reset" class="button">重置</button>
+                </div>
+            </div>
+        </div>
+        <div id="result" v-cloak >
+            <div @click="showMoneyI = false">
+                <div class="result" style="margin-top: 0">
+                    <h3>计算结果</h3>
+                    <table class="table" style="padding: 0 10px 0 0;">
+                        <colgroup>
+                            <col width="30%">
+                            <col width="30%">
+                            <col width="30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>月份</td>
+                                <td>应交税额</td>
+                                <td style="position: relative">实发工资<img @click.stop="showMoneyI = !showMoneyI" style="margin-left: 3px; position: relative; top: 2px;"
+                                        src="source/i.png"><span v-if="showMoneyI" class="money-info">实发工资=月收入-应缴税额-各项社会保险费</span></td>
+                            </tr>
+                            <tr v-for="r in result">
+                                <td>{{r.month === 'all'?'全部':r.month + '月'}}</td>
+                                <td>{{r.tax}}</td>
+                                <td>{{r.money}}</td>
+                            </tr>
+                            <tr v-for="r in 13" v-if="result.length == 0">
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="common-share page-share"><span class="share-txt">分享到：</span>
+            <div class="sharetype">
+                <a data-cmd="weibo" title="分享到微博" class="weibo">分享到微博</a>
+                <a data-cmd="qzone" title="分享到qzone" class="qzone">分享到qzone</a>
+                <a data-cmd="weixin" title="分享到微信" class="weixin">分享到微信</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="source/es6-promise.min.js"></script>
+<script src="source/vue.min.js"></script>
+<script src="source/jquery.min.js"></script>
+<script src="source/ofoShare.js"></script>
+<script src="source/axios.min.js"></script>
+<script src="source/main.js"></script>
+</html>

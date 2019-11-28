@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Keywords" content="2019新个税计算器,新个税计算器,2019个人所得税计算器,个税税率表2019,工资计算器,税后工资计算器,新个税计算公式">
+    <meta name="Description" content="2019新个税计算器，采用了2019年最新个人所得税计算税率表、起征点和速算扣除表，子女教育费、住房贷款利息、租房租金等专项附加税扣除一键搞定，是2019年最好用的在线免费个税计算器。">
+    <meta name="abstract" content="2019新个税计算器，采用了2019年最新个人所得税计算税率表、起征点和速算扣除表，子女教育费、住房贷款利息、租房租金等专项附加税扣除一键搞定，是2019年最好用的在线免费个税计算器。">
+	<meta name="robots" content="Index,Follow">
+	<meta name="revisit-after" content="14 days">
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="2019新个税计算器，采用了2019年最新个人所得税计算税率表、起征点和速算扣除表，子女教育费、住房贷款利息、租房租金等专项附加税扣除一键搞定，是2019年最好用的在线免费个税计算器。">
+	<meta property="og:title" content="2019新个税计算器 - 人所得税计算税率表">
+	<meta property="og:url" content="geshui2019.ofoyou.com">
+    <title>2019新个税计算器</title>
+    <link rel="stylesheet" href="m/style.css">
+    <link rel="shortcut icon" type="image/png" href="source/tax.png">
+    <style>
+        .links .wrap{
+            max-width: 350px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .links .wrap a{
+            margin-bottom: 10px;
+        }
+        .text{
+            font-size: 14px;
+        }
+        .label input{
+            height:30px;
+            border-radius: 5px;
+        }
+        #app{
+            margin-top: 0;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding:0 5px;
+            color: #666;
+        }
+        table tr {
+            height: 25px;
+            text-align: center;
+        }
+    </style>
+    <script>
+            if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+                //不是移动端
+                window.location = "index.html";
+            }
+        </script>
+</head>
+
+<body>
+    <div id="app" @click="showMoneyI = false">
+        <div v-if="showResult==false">
+            <h2>2019 新个税计算器</h2>
+            <div class="form">
+                <div class="item cost">
+                    <label class="label">
+                        <span class="text">税前月收入</span>
+                        <input type="number" v-model="salary" placeholder="请输入收入金额" inputmode="numeric">
+                    </label>
+                </div>
+                <div class="item cost">
+                    <label class="label">
+                        <span class="text">专项附加扣除</span>
+                        <input type="number" v-model="deduct1" placeholder="请输入对应金额" inputmode="numeric" value="0">
+                    </label>
+                </div>
+                <div class="item cost" style="border: none;">
+                    <label class="label">
+                        <span class="text">各项社会保险费</span>
+                        <input type="number" v-model="deduct2" placeholder="请输入对应金额" inputmode="numeric" value="0">
+                    </label>
+                </div>
+                <div class="item" style="margin-top: 15px;text-align: center;">
+                    <button class="button blue" @click="post">计算</button>
+                    <button class="button reset" @click="reset">重新计算</button>
+                </div>
+                <div class="intro">
+                    <p class="intro-title">
+                        <span class="title-icon"></span>
+                        <span class="title-text">2019新个税指南</span>
+                    </p>
+                    <a target="_blank" href="/public/mobile/expression.html">2019年工资、薪金个税抵扣公式</a>
+                    <a target="_blank" href="http://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">中华人民共和国个人所得税法</a>
+                    <a target="_blank" href="http://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3963364/content.html">中华人民共和国个人所得税法实施条例</a>
+                    <a target="_blank" href="http://www.chinatax.gov.cn/n810219/n810744/n3752930/n3758781/c3968494/content.html">个税专项附加扣除这么扣</a>
+                </div>
+                <div class="links">
+                    <p class="links-title">
+                        <span class="title-icon"></span>
+                        <span class="title-text">2019年工资、薪金个税抵扣公式</span>
+                    </p>
+                    <a href="javascript:;" style="line-height: 2em;">
+                        应预扣预缴税额=（累计预扣预缴应纳税所得额×预扣率-速算扣除数)-累计减免税额-累计已预扣预缴税额
+                        累计预扣预缴应纳税所得额=累计收入-累计免税收入-累计减除费用-累计专项扣除-累计专项附加扣除-累计依法确定的其他扣除
+                        累计减除费用：按照5000元/月乘以纳税人当年截至本月在本单位的任职受雇月份数计算。
+                    </a>
+                </div>
+                <div class="links">
+                    <p class="links-title">
+                        <span class="title-icon"></span>
+                        <span class="title-text">2019新个税税率表</span>
+                    </p>
+                    <table style="width: 100%;font-size: 12px;">
+                        <colgroup>
+                            <col width="45%">
+                            <col width="25%">
+                            <col width="30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>新级数(元)</td>
+                                <td>税率(%)</td>
+                                <td>速算扣除数</td>
+                            </tr>
+                            <tr>
+                                <td>&lt; 36000</td>
+                                <td>3</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>36000-144000</td>
+                                <td>10</td>
+                                <td>2520</td>
+                            </tr>
+                            <tr>
+                                <td>144000-300000</td>
+                                <td>20</td>
+                                <td>16920</td>
+                            </tr>
+                            <tr>
+                                <td>300000-420000</td>
+                                <td>25</td>
+                                <td>31920</td>
+                            </tr>
+                            <tr>
+                                <td>420000-660000</td>
+                                <td>30</td>
+                                <td>52920</td>
+                            </tr>
+                            <tr>
+                                <td>660000-960000</td>
+                                <td>35</td>
+                                <td>85920</td>
+                            </tr>
+                            <tr>
+                                <td>&gt; 960000</td>
+                                <td>45</td>
+                                <td>181920</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span style="width: 100%;font-size: 12px;color: #666;">注：新级数为全年应纳税所得额</span>
+                </div>
+            </div>
+        </div>
+        <div class="result" v-cloak v-if="showResult">
+            <span class="btn" @click="goBack" v-if="isMobile && showResult">重新计算</span>
+            <h3>计算结果</h3>
+            <table class="table" style="padding: 0 10px 0 0;">
+                <thead>
+                    <tr style="line-height: 22px;">
+                        <th style="text-align: right;width: 50px;font-weight:bold;padding: 0 5px;">月份</th>
+                        <th style="text-align: right;font-weight:bold;padding: 0 5px;">应交税额</th>
+                        <th style="position: relative;font-weight:bold;text-align: right;">实发工资<img @click.stop="showMoneyI = !showMoneyI" style="margin-left: 3px; position: relative; top: 2px;"
+                            src="source/i.png"><span v-if="showMoneyI" class="money-info">实发工资=月收入-应缴税额-各项社会保险费</span></th>
+                    </tr>
+                </thead>
+                <tbody style="background-color: #fff; border-top: 15px solid #f2f2f2;" class="table-tbody">
+                    <tr v-for="r in result" :class="{'result-all': r.month === 'all'}" style="width: 345px; height: 56px; line-height: 56px;"
+                        :style="{borderTop:r.month === 'all'?'#aaa solid 1px':''}">
+                        <td style="text-align: right">{{r.month === 'all'?'全部':r.month + '月'}}</td>
+                        <td style="text-align: right">{{r.tax}}</td>
+                        <td style="text-align: right">{{r.money}}</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+        <div class="common-share page-share">
+            <span class="share-txt">分享到：</span>
+            <div class="sharetype">
+                <a data-cmd="weibo" class="weibo" title="分享到微博">分享到微博</a>
+                <a data-cmd="qzone" class="qzone" title="分享到qzone">分享到qzone</a>
+                <a data-cmd="qq" class="qq" title="分享到QQ">分享到QQ</a>
+            </div>
+        </div>
+        <div style="text-align: center; font-size: 14px;font-weight: bold;color: #666;margin: 20px 0;">个税计算结果仅供参考，实际数额以税务机关确认的结果为准。</div>
+        <p class="declare" style="text-align: center;">网站免责声明本网站所提供的信息,只供参考。</p>
+    </div>
+    <script src="source/vue.min.js"></script>
+    <script src="source/axios.min.js"></script>
+    <script src="source/jquery.min.js"></script>
+    <script src="source/ofoShare.js"></script>
+    <script src="m/main.js"></script>
+</body>
+
+
+</html>

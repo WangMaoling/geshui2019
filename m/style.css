@@ -1,0 +1,514 @@
+[v-cloak] {
+    display:none !important;
+}
+html {
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei"
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #f2f2f2
+}
+
+#app {
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 82px
+}
+
+.form .item {
+    margin-bottom: 10px
+}
+
+.form .cost {
+    height: 56px;
+    background-color: #fff;
+    line-height: 56px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f3f4f6
+}
+
+.form .cost label {
+    width: 100%;
+    display: block;
+    white-space: nowrap
+}
+
+.form .cost label .text {
+    width: 30%;
+    text-align: right
+}
+
+.form .cost label input {
+    width: 60%;
+    border: none;
+    outline: none
+}
+
+.form .text {
+    padding-right: 8px;
+    text-align: right;
+    display: inline-block
+}
+
+.code-view {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center
+}
+
+.code-view .code-img {
+    width: 165px;
+    height: 165px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 150px
+}
+
+.code-view .cancel-code {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px
+}
+
+.links {
+    width: 95%;
+    /* height: 142px; */
+    background-color: #fff;
+    margin: 15px auto;
+    padding: 8px;
+    text-align: left;
+    border-radius: 4px
+}
+
+.links .links-title {
+    margin: 6px 0;
+    text-align: left !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333
+}
+
+.links .link {
+    display: block
+}
+
+.links .title-icon {
+    width: 4px;
+    height: 18px;
+    margin-left: -8px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #39a8ee
+}
+
+.links .title-text {
+    margin-left: 8px;
+    vertical-align: middle
+}
+
+.links .wrap {
+    max-width: 400px;
+    margin: auto
+}
+
+.links a {
+    margin: 15px 0 0 11px;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    text-align: left;
+    text-decoration: initial
+}
+
+.label input {
+    font-size: 16px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    border: 1px solid #9E9E9E
+}
+
+.button {
+    cursor: pointer;
+    width: 165px;
+    height: 42px;
+    background-color: #fff;
+    border: 1px solid #9c9c9c;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 16px
+}
+
+.button.blue {
+    margin-right: 10px;
+    border: 0;
+    color: #fff;
+    background-color: #39a8ee
+}
+
+.button.cancel-code {
+    margin-right: 10px;
+    border: 0;
+    color: #fff;
+    background-color: #878992
+}
+
+.button.reset {
+    border: 1px solid #39a8ee;
+    color: #39a8ee
+}
+
+.intro {
+    width: 95%;
+    height: 168px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin: auto
+}
+
+.intro a {
+    margin: 15px 0 0 11px;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    text-align: left;
+    text-decoration: initial
+}
+
+.intro .intro-title {
+    margin: 6px 0;
+    text-align: left !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333
+}
+
+.intro .intro-title .title-icon {
+    width: 4px;
+    height: 18px;
+    display: inline-block;
+    margin-left: -8px;
+    vertical-align: middle;
+    background-color: #39a8ee
+}
+
+.intro .intro-title .title-text {
+    margin-left: 8px;
+    vertical-align: middle
+}
+
+.declare {
+    color: #d4d4d4
+}
+
+.btn {
+    color: #03A9F4;
+    text-decoration: underline;
+    position: absolute;
+    left: 20px;
+    top: 18px
+}
+
+.bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+.bottom .img {
+    vertical-align: bottom;
+    max-width: 100%;
+    max-height: 160px
+}
+
+.table {
+    min-width: 340px;
+    margin: auto;
+    width: 94%;
+}
+
+.table .table-tbody>:not(:last-child) {
+    border-bottom: 1px solid #f3f4f6
+}
+
+.table .result-all {
+    border-top: 10px solid #f2f2f2 !important
+}
+
+.table .money-info {
+    width: 160px;
+    position: absolute;
+    right: 0px;
+    top: -55px;
+    padding: 5px;
+    font-weight: normal;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    background-color: #fff
+}
+
+.common-share {
+    overflow: hidden;
+    margin: 23px auto 3px;
+    width: 280px;
+    border-radius: 25px;
+    background: #f3f9f8;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 0;
+    *word-spacing: -1px
+}
+
+.common-share .share-txt {
+    display: inline-block;
+    line-height: 34px;
+    color: #1f4d90;
+    font-size: 16px;
+    vertical-align: top;
+    word-spacing: normal;
+    letter-spacing: normal;
+    *display: inline;
+    zoom: 1
+}
+
+.common-share .sharetype {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    word-spacing: normal;
+    letter-spacing: normal;
+    *display: inline;
+    zoom: 1
+}
+
+.common-share a {
+    display: block;
+    float: left;
+    text-indent: -99em;
+    overflow: hidden;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    margin: 0 5px;
+    background: url("../source/share34.png") no-repeat
+}
+
+.common-share a:hover {
+    opacity: .8;
+    filter: alpha(opacity=80);
+    cursor: pointer
+}
+
+.common-share .quan {
+    background-position: -136px 0
+}
+
+.common-share .weibo {
+    background-position: 0 0
+}
+
+.common-share .qzone {
+    background-position: -34px 0
+}
+
+.common-share .weixin {
+    background-position: -68px 0px
+}
+
+.common-share .qq {
+    background-position: -102px 0px
+}
+
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -0.25em
+}
+
+sup {
+    top: -0.5em
+}
+
+img {
+    border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+template {
+    display: none
+}
+
+[hidden] {
+    display: none
+}
