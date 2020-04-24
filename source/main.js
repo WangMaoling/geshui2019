@@ -21,10 +21,10 @@ var app = new Vue({
     this.$nextTick(function() {
       $(".page-share").ofoShare({
         link: location.href,
-        title: "2019新个税计算器分享",
-        desc: "最新2019新个税计算器，看看明年你每个月交税情况，看看你的收入分布。",
-        comment:"最新2019新个税计算器，看看明年你每个月交税情况，看看你的收入分布。",
-        pics: "http://geshui2019.ofoyou.com/source/tax.png",
+        title: "2020新个税计算器分享",
+        desc: "最新2020新个税计算器，看看明年你每个月交税情况，看看你的收入分布。",
+        comment:"最新2020新个税计算器，看看明年你每个月交税情况，看看你的收入分布。",
+        pics: "http://ofoyou.com/source/tax.png",
         beforeClick: function(e, t) {
           if (e === "weibo") {
             t.title = t.desc;

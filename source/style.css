@@ -13,7 +13,8 @@ html {
 }
 
 body {
-    background-color: #fff
+    background-color: #fff;
+    padding-bottom: 70px;
 }
 
 #app {
@@ -533,4 +534,20 @@ template {
 }
 
 @media (max-width: 768px) {
+}
+.deanftbottom{
+    width: 100%;
+    background: #0B0C0C;
+    padding: 15px 0;
+    /* height: 100px; */
+    margin:0 auto;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.beian{
+    font-size: 14px;
+    color: #999;
+    height: 30px;
+    line-height: 30px;
 }

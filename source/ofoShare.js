@@ -55,7 +55,7 @@
         }
 
         if(typ==="weixin"){
-            window.open("http://geshui2019.ofoyou.com/wcode.html?url="+surl+"&title="+stitle+"&desc="+sdesc,"_blank","width= 620,height= 700,top= 100, left= 200, toolbar=no, menubar= no, scrollbars= no, resizable= yes, location= no, status=no ");
+            window.open("http://ofoyou.com/wcode.html?url="+surl+"&title="+stitle+"&desc="+sdesc,"_blank","width= 620,height= 700,top= 100, left= 200, toolbar=no, menubar= no, scrollbars= no, resizable= yes, location= no, status=no ");
         }
 
         if(typ==="weibo"){
