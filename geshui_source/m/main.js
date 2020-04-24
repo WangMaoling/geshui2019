@@ -5,26 +5,27 @@ var reg = /^[\d\.]+$/
 
 var app = new Vue({
   el: '#app',
+  // template: '#template',
   data: function () {
     return {
+      showResult: false,
       salary: '',//税前
       deduct1: '0',//专项附加扣除
       deduct2: '0',//各项社会保险费
       result: [],
-      isMobile: false,
+      isMobile: true,
       showMoneyI: false,
-
+      showCode: false
     }
   },
   mounted: function() {
-    this.isMobile = false
     this.$nextTick(function() {
       $(".page-share").ofoShare({
         link: location.href,
         title: "2020新个税计算器分享",
         desc: "最新2020新个税计算器，看看明年你每个月交税情况，看看你的收入分布。",
         comment:"最新2020新个税计算器，看看明年你每个月交税情况，看看你的收入分布。",
-        pics: "http://ofoyou.com/source/tax.png",
+        pics: "http://ofoyou.com/geshui_source/tax.png",
         beforeClick: function(e, t) {
           if (e === "weibo") {
             t.title = t.desc;
@@ -84,8 +85,6 @@ var app = new Vue({
       }
       var ct = month*(this.salary-5000-this.deduct1-this.deduct2);
       ct = this.shuilv(ct).lv*ct-this.shuilv(ct).kouchu - count;
-      // console.log(this.salary - ct - this.deduct2)
-      
       this.result.push({
         month: month,
         tax: ct.toFixed(2),
@@ -93,7 +92,7 @@ var app = new Vue({
       })
     },
     post: function () {
-      this.result = []
+      this.result = [];
       switch ('') {
         case this.salary:
           return alert('请输入收入金额');
@@ -135,6 +134,7 @@ var app = new Vue({
         tax: taxCount.toFixed(2),
         money: moneyCount.toFixed(2),
       })
+      this.showResult = true;
       axios.get('http://geshui2019.ofoyou.com/getInfo', {
         params: {
           salary: this.salary,
@@ -142,7 +142,6 @@ var app = new Vue({
           deductV2: this.deduct2
         }
       }).then(function(res) {})
-      
     },
     reset: function() {
       this.salary = ''
@@ -150,5 +149,14 @@ var app = new Vue({
       this.deduct2 = '0'
       this.result = []
     },
+    goBack: function() {
+      this.showResult = false
+      this.reset()
+    },
+    checkZero: function(name) {
+      if (this[name] == 0) {
+        this[name] = ''
+      }
+    }
   }
 })

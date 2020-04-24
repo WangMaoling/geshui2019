@@ -19,8 +19,9 @@
 	<!-- <meta property="og:url" content="geshui2019.ofoyou.com"> -->
 	<meta property="og:url" content="ofoyou.com">
     <title>2020新个税计算器</title>
-    <link rel="shortcut icon" type="image/png" href="source/tax.png">
-    <link rel="stylesheet" href="source/style.css">
+    <link rel="shortcut icon" type="image/png" href="geshui_source/tax.png">
+    <link rel="stylesheet" href="geshui_source/style.css">
+    <meta name="baidu-site-verification" content="G9r16ahGTs" />
     <style>
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
@@ -159,7 +160,7 @@
                                 <td>月份</td>
                                 <td>应交税额</td>
                                 <td style="position: relative">实发工资<img @click.stop="showMoneyI = !showMoneyI" style="margin-left: 3px; position: relative; top: 2px;"
-                                        src="source/i.png"><span v-if="showMoneyI" class="money-info">实发工资=月收入-应缴税额-各项社会保险费</span></td>
+                                        src="geshui_source/i.png"><span v-if="showMoneyI" class="money-info">实发工资=月收入-应缴税额-各项社会保险费</span></td>
                             </tr>
                             <tr v-for="r in result">
                                 <td>{{r.month === 'all'?'全部':r.month + '月'}}</td>
@@ -188,10 +189,10 @@
         <a target="_blank" class="beian" href="http://www.beian.miit.gov.cn/">鲁ICP备16025997号-2</a>
     </div>
 </body>
-<script src="source/es6-promise.min.js"></script>
-<script src="source/vue.min.js"></script>
-<script src="source/jquery.min.js"></script>
-<script src="source/ofoShare.js"></script>
-<script src="source/axios.min.js"></script>
-<script src="source/main.js"></script>
+<script src="geshui_source/es6-promise.min.js"></script>
+<script src="geshui_source/vue.min.js"></script>
+<script src="geshui_source/jquery.min.js"></script>
+<script src="geshui_source/ofoShare.js"></script>
+<script src="geshui_source/axios.min.js"></script>
+<script src="geshui_source/main.js"></script>
 </html>
